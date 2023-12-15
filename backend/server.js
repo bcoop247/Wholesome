@@ -2,6 +2,7 @@ const express = require('express');
 const { Pool } = require('pg');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const bcrypt = require('bcrypt');
 
 const app = express();
 const port = 3001;
@@ -31,16 +32,25 @@ app.get('/newuser', (req, res) => {
 
 app.post('/newuser', async (req, res) => {
   const { email, firstName, lastName, username, password } = req.body;
+  const saltRounds = 10;
 
-  try{
-    await pool.query('INSERT INTO users (email, first_name, last_name, username, password) VALUES ($1, $2, $3, $4, $5)', [email, firstName, lastName, username, password]);
-    res.json('New User Success');
-  }catch(error){
-    console.error('Error adding user to database:', error);
-    res.status(500).json({ error: 'Internal Server Error' });
-  }
-
-})
+  bcrypt.hash(password, saltRounds, async (error, hashedPassword) => { 
+    await pool.query(
+      `INSERT INTO users (first_name, last_name, username, email, password)
+      VALUES ($1, $2, $3, $4, $5)`, [firstName, lastName, username, email, hashedPassword])
+  
+    .then(() => {
+      console.log("User successfully inserted.");
+      res.status(201).send("User created successfully."); // Send a success response
+    })
+    .catch((error) => {
+      console.error("Error inserting user:", error);
+      res.status(500).send("An error occurred while creating the user."); // Send an error response
+    });
+  
+  });
+});
+ 
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

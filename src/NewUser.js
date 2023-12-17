@@ -33,7 +33,7 @@ try{
         <form className="p-3 mt-3" onSubmit={handleSubmit}>
           <div className="form-field d-flex align-items-center">
                 <span className="far fa-user"></span>
-                <input type="text" name="email" id="email" value={email} placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
+                <input type="email" name="email" id="email" value={email} placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
           </div>
           <div className="form-field d-flex align-items-center">
                 <span className="far fa-user"></span>

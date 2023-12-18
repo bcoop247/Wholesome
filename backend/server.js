@@ -26,6 +26,11 @@ app.get('/', (req, res) => {
   res.send('Hello World');
 })
 
+const isUsernameTaken = async (username) => {
+  const result = await pool.query('SELECT * FROM users WHERE username = $1', [username]);
+  return result.rows.length > 0;
+};
+
 app.get('/newuser', (req, res) => {
   res.send('New User');
 })
@@ -33,6 +38,10 @@ app.get('/newuser', (req, res) => {
 app.post('/newuser', async (req, res) => {
   const { email, capitalizedFirstName, capitalizedLastName, username, password } = req.body;
   const saltRounds = 10;
+  const usernameTaken = await isUsernameTaken(username);
+  if (usernameTaken) {
+    return res.status(400).json({ error: 'Username already exists' });
+  }
 
   bcrypt.hash(password, saltRounds, async (error, hashedPassword) => { 
     await pool.query(

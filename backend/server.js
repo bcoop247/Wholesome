@@ -31,13 +31,13 @@ app.get('/newuser', (req, res) => {
 })
 
 app.post('/newuser', async (req, res) => {
-  const { email, firstName, lastName, username, password } = req.body;
+  const { email, capitalizedFirstName, capitalizedLastName, username, password } = req.body;
   const saltRounds = 10;
 
   bcrypt.hash(password, saltRounds, async (error, hashedPassword) => { 
     await pool.query(
       `INSERT INTO users (first_name, last_name, username, email, password)
-      VALUES ($1, $2, $3, $4, $5)`, [firstName, lastName, username, email, hashedPassword])
+      VALUES ($1, $2, $3, $4, $5)`, [capitalizedFirstName, capitalizedLastName, username, email, hashedPassword])
   
     .then(() => {
       console.log("User successfully inserted.");

@@ -1,6 +1,6 @@
 /* Importing fonts from Google */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cedarville+Cursive&family=Cormorant+Garamond:wght@600&family=Dancing+Script:wght@700&family=Lobster&family=Open+Sans:wght@300&family=Roboto:ital,wght@1,700&display=swap');
 /* Reseting */
 * {
     margin: 0;
@@ -41,10 +41,11 @@ body {
 
 .wrapper .name {
     font-weight: 600;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     letter-spacing: 1.3px;
     padding-left: 10px;
     color: #555;
+    font-family: 'Lobster';
 }
 
 .wrapper .form-field input {
@@ -82,18 +83,22 @@ body {
     letter-spacing: 1.3px;
 }
 
+.wrapper .btn{
+    background-color: #970747;
+}
+
 .wrapper .btn:hover {
-    background-color: #039BE5;
+    background-color: #C8095e;
 }
 
 .wrapper a {
     text-decoration: none;
     font-size: 0.8rem;
-    color: #03A9F4;
+    color: #970747;
 }
 
 .wrapper a:hover {
-    color: #039BE5;
+    color: #c8095e;
 }
 
 @media(max-width: 380px) {
@@ -101,4 +106,8 @@ body {
         margin: 30px 20px;
         padding: 40px 15px 15px 15px;
     }
+}
+
+.alert{
+    color: red;
 }

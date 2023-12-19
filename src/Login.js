@@ -1,4 +1,5 @@
 import {Link} from 'react-router-dom';
+import Logo from './assets/spoon-fork.png';
 
 const Login = () => {
 
@@ -6,9 +7,10 @@ const Login = () => {
     <>
      <div class="wrapper">
         <div class="logo">
-            <img src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-bird-symbols-png-logo-0.png" alt="" />
+          <img src={Logo} alt='logo'/>
         </div>
         <div class="text-center mt-4 name">
+
             Wholesome
         </div>
         <form class="p-3 mt-3">

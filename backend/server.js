@@ -31,6 +31,11 @@ const isUsernameTaken = async (username) => {
   return result.rows.length > 0;
 };
 
+const doesEmailAlreadyExist = async (email) => {
+  const result = await pool.query('SELECT * FROM users WHERE email = $1', [email]);
+  return result.rows.length > 0;
+}
+
 app.get('/newuser', (req, res) => {
   res.send('New User');
 })
@@ -38,10 +43,17 @@ app.get('/newuser', (req, res) => {
 app.post('/newuser', async (req, res) => {
   const { email, capitalizedFirstName, capitalizedLastName, username, password } = req.body;
   const saltRounds = 10;
+
   const usernameTaken = await isUsernameTaken(username);
   if (usernameTaken) {
     return res.status(400).json({ error: 'Username already exists' });
   }
+
+  const emailAlreadyUsed = await doesEmailAlreadyExist(email);
+  if(emailAlreadyUsed){
+    return res.status(400).json({ error: 'Account with that email already exists' })
+  }
+  
 
   bcrypt.hash(password, saltRounds, async (error, hashedPassword) => { 
     await pool.query(

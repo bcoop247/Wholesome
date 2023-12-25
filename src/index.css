@@ -8,7 +8,8 @@
 body{
     display: grid;
     place-items:center;
-    /* background: #eee */
+    text-align: center;
+    background: #ecf0f3;
 }
 .card{
     border-radius: 20px;
@@ -21,17 +22,29 @@ body{
     background: linear-gradient(145deg, #d6d6d6, #ffffff);
     box-shadow: 20px 20px 60px #cacaca, -20px -20px 60px #ffffff
 }
-.neo-button{width: 40px;height: 40px;outline: 0 !important;cursor: pointer;color: #fff;font-size: 15px;border: none;margin-right: 10px;border-radius: 50%;background: linear-gradient(145deg, #d6d6d6, #ffffff);box-shadow: 20px 20px 60px #cacaca, -20px -20px 60px #ffffff}
+.neo-button{
+    width: 70px;
+    height: 70px;
+    outline: 0 !important;
+    cursor: pointer;
+    color: #970747;
+    font-size: 15px;
+    border: none;
+    margin-right: 10px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #d6d6d6, #ffffff);box-shadow: 20px 20px 60px #cacaca, -20px -20px 60px #ffffff
+}
 
-.neo-button:active{border-radius: 50%;background: linear-gradient(145deg, #d6d6d6, #ffffff);box-shadow: inset 20px 20px 60px #cacaca, inset -20px -20px 60px #ffffff}
-.fa-facebook{color: #3b5998}
+.neo-button:active{
+    border-radius: 50%;
+    background: linear-gradient(145deg, #d6d6d6, #ffffff);box-shadow: inset 20px 20px 60px #cacaca, inset -20px -20px 60px #ffffff
+}
+
+.fa-facebook{
+    color: #3b5998
+}
 
 /* Reseting */
-
-body {
-    background: #ecf0f3;
-    /* background-color: #5c7d91; */
-}
 
 .wrapper {
     max-width: 350px;

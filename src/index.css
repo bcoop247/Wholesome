@@ -156,5 +156,7 @@ body{
 .custom-nav-bar a {
     font-family: 'Lobster';
     color: white;
-
+}
+#custom-message{
+    margin-top: 55px;
 }

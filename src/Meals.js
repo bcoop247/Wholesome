@@ -1,40 +1,60 @@
-const Meals = () => {
+import NavBar from "./NavBar";
+import { useState } from "react";
+import NewFoodRecipeForm from "./NewFoodRecipeForm";
 
+const Meals = () => {
+const [isUserNew, setIsUserNew] = useState(true);
+const [newRecipe, addNewRecipe] = useState(false);
+
+const handleAddNewRecipeButton = () => {
+  addNewRecipe(true);
+}
+const handleCloseNewRecipe = () => {
+  addNewRecipe(false);
+}
   return(
     <>
-    <nav className="navbar fixed-top navbar-expand-lg custom-nav-bar"> 
-      <a className="navbar-brand" href="#" data-abc="true">Wholesome</a> 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
-    <div className="collapse navbar-collapse" id="navbarColor02">
-        <ul className="navbar-nav mr-auto">
-            <li className="nav-item active"> <a class="nav-link" href="#" data-abc="true">Home <span class="sr-only">(current)</span></a> </li>
-            <li className="nav-item"> <a class="nav-link" href="#" data-abc="true">Meals</a> </li>
-            <li className="nav-item"> <a class="nav-link" href="#" data-abc="true">Desserts</a> </li>
-            <li className="nav-item"> <a class="nav-link" href="#" data-abc="true">Cocktails</a> </li>
-        </ul>
-        <form onsubmit="event.preventDefault()" class="form-inline my-2 my-lg-0"> <input class="form-control mr-sm-2" type="text" placeholder="Search" /> <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button> </form>
+    <NavBar />
+
+
+    <div class="row d-flex justify-content-center mt-100">
+      {isUserNew ? (
+      <div class="col-md-4">
+
+         <div class="main-card mb-3 card" id="custom-message">
+            <div class="card-header">
+                <i class="fa fa-wifi mr-2 mb-1"> </i>
+                  Meal Recipes
+            </div>
+              <div class="card-body">
+                <div class="tab-content">
+                  <div class="tab-pane show active" id="tab-eg3-0" role="tabpanel">
+                    <p>Welcome to Wholesome! This is your homepage for all of your favorite homemade meal recipes! To get started, clisk the plus button below to add a your first recipe.</p></div>
+                </div>
+              </div>
+                                        <div class="d-block text-right card-footer">
+                                            <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i class="fa fa-trash"> </i></button>
+                                            <button class="btn-wide btn btn-success">Save</button>
+                                        </div>
+            </div>
+         
+      </div>
+) : <p>Hello</p>}
     </div>
-    </nav>
 
     <div class="social-buttons"> 
-    <button class="neo-button"><i class="fas fa-plus fa-2x"></i> </button> 
-    <button class="neo-button"><i class="fa-solid fa-plus"></i> </button> 
+    <button className="neo-button" onClick={handleAddNewRecipeButton}><i className="fas fa-plus fa-2x"></i> </button> 
+    <button className="neo-button"><i className="fas fa-angle-up fa-2x"></i> </button>
+    <button className="neo-button"><i className="fas fa-angle-down fa-2x"></i> </button>
 
+    
     </div>
-    {/* <div class="card mb-3" style={{maxWidth: '540px'}}>
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="..." class="img-fluid rounded-start" alt="..." />
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-  </div>
-</div> */}
+
+
+{ newRecipe &&
+    <NewFoodRecipeForm />
+
+}
     </>
   )
 }

@@ -3,7 +3,7 @@ import Login from './Login';
 import NewUser from './NewUser';
 import Home from './Home';
 import Meals from './Meals';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (

@@ -9,40 +9,29 @@ const NewFoodRecipeForm = () => {
 
   return (
     <>
-    <div class="form4 top">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-7 col-md-offset-2">
-                        <div class="form-bg">
-                            <form class="form" id="custom-recipe-form">
-                                <div class="form-group">
-                                    <label class="sr-only">Name of Recipe</label>
-                                    <input type="text" class="form-control" required="" placeholder="Name of Recipe" />
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only">Prep Time</label>
-                                    <input type="number" class="form-control" required="" placeholder="Prep Time" />
-                                </div>
-                                <div class="form-group">
-                                    <label class="sr-only">Ingredients</label>
-                                    <input type="text" class="form-control" required="" onFocus={handleAddIngredient} placeholder="Ingredient and Amount" />
-                                </div>
-                                <div className="form-group">
-                                  <i class="fas fa-plus align-items-left"></i>
-                                </div>
+<div class="wrapper">
+        <div class="text-center mt-4 name">
 
-                                <div class="form-group">
-                                    <label class="sr-only">Directions</label>
-                                    <textarea class="form-control" required="" rows="7" placeholder="Directions"></textarea>
-                                </div>
-                                <button type="submit" class="btn text-center btn-blue">Done</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            Wholesome
         </div>
-        </>
+        <form class="p-3 mt-3">
+            <div class="form-field d-flex align-items-center">
+                <span class="far fa-user"></span>
+                <input type="text" name="userName" id="userName" placeholder="Username" />
+            </div>
+            <div class="form-field d-flex align-items-center">
+                <span class="fas fa-key"></span>
+                <input type="password" name="password" id="pwd" placeholder="Password" />
+            </div>
+            <button class="btn mt-3">Login</button>
+        </form>
+
+    </div>
+
+    
+ 
+
+    </>
   )
 }
 

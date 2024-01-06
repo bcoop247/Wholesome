@@ -2,12 +2,14 @@ import NavBar from "./NavBar";
 import { useState } from "react";
 import NewFoodRecipeForm from "./NewFoodRecipeForm";
 
+
 const Meals = () => {
 const [isUserNew, setIsUserNew] = useState(true);
 const [newRecipe, addNewRecipe] = useState(false);
 
 const handleAddNewRecipeButton = () => {
   addNewRecipe(true);
+  setIsUserNew(false);
 }
 const handleCloseNewRecipe = () => {
   addNewRecipe(false);
@@ -15,10 +17,9 @@ const handleCloseNewRecipe = () => {
   return(
     <>
     <NavBar />
-
-
+    { isUserNew && 
     <div class="row d-flex justify-content-center mt-100">
-      {isUserNew ? (
+      
       <div class="col-md-4">
 
          <div class="main-card mb-3 card" id="custom-message">
@@ -29,7 +30,7 @@ const handleCloseNewRecipe = () => {
               <div class="card-body">
                 <div class="tab-content">
                   <div class="tab-pane show active" id="tab-eg3-0" role="tabpanel">
-                    <p>Welcome to Wholesome! This is your homepage for all of your favorite homemade meal recipes! To get started, clisk the plus button below to add a your first recipe.</p></div>
+                    <p>Welcome to Wholesome! This is your homepage for all of your favorite homemade meal recipes! To get started, click the plus button below to add a your first recipe.</p></div>
                 </div>
               </div>
 
@@ -41,8 +42,9 @@ const handleCloseNewRecipe = () => {
             </div>
          
       </div>
-) : <p>Hello</p>}
     </div>
+
+}
 
     {/* <div class="social-buttons"> 
     <button className="neo-button" onClick={handleAddNewRecipeButton}><i className="fas fa-plus fa-2x"></i> </button> 

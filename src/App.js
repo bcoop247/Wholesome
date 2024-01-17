@@ -8,7 +8,7 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 function App() {
   return (
     <>
-    <Router basename = '/'>
+    <Router basename = '/Wholesome'>
         <Routes>
             <Route index element = {<Login />} />
             <Route path = '/newuser' element = {<NewUser />} />

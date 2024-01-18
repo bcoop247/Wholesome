@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/bcoop247/Wholesome/static/css/main.df066d04.css",
-    "main.js": "/bcoop247/Wholesome/static/js/main.92bec1f1.js",
-    "static/media/spoon-fork.png": "/bcoop247/Wholesome/static/media/spoon-fork.8e4fb4860c34886c6872.png",
-    "static/media/foodImage.png": "/bcoop247/Wholesome/static/media/foodImage.2c801472fc9bd3225106.png",
-    "static/media/cocktails_image.jpeg": "/bcoop247/Wholesome/static/media/cocktails_image.316957c6776030d5c06c.jpeg",
-    "static/media/desserts.jpeg": "/bcoop247/Wholesome/static/media/desserts.4a13cdb7b927b4063a9f.jpeg",
-    "index.html": "/bcoop247/Wholesome/index.html",
-    "main.df066d04.css.map": "/bcoop247/Wholesome/static/css/main.df066d04.css.map",
-    "main.92bec1f1.js.map": "/bcoop247/Wholesome/static/js/main.92bec1f1.js.map"
+    "main.css": "/Wholesome/static/css/main.df066d04.css",
+    "main.js": "/Wholesome/static/js/main.37ae1f55.js",
+    "static/media/spoon-fork.png": "/Wholesome/static/media/spoon-fork.8e4fb4860c34886c6872.png",
+    "static/media/foodImage.png": "/Wholesome/static/media/foodImage.2c801472fc9bd3225106.png",
+    "static/media/cocktails_image.jpeg": "/Wholesome/static/media/cocktails_image.316957c6776030d5c06c.jpeg",
+    "static/media/desserts.jpeg": "/Wholesome/static/media/desserts.4a13cdb7b927b4063a9f.jpeg",
+    "index.html": "/Wholesome/index.html",
+    "main.df066d04.css.map": "/Wholesome/static/css/main.df066d04.css.map",
+    "main.37ae1f55.js.map": "/Wholesome/static/js/main.37ae1f55.js.map"
   },
   "entrypoints": [
     "static/css/main.df066d04.css",
-    "static/js/main.92bec1f1.js"
+    "static/js/main.37ae1f55.js"
   ]
 }
